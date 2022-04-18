@@ -1,0 +1,792 @@
+[
+  {
+    "name": "ynet",
+    "ads": [
+      {
+        "_id": "ioEH6",
+        "name": "#ads.tx",
+        "count": 1
+      },
+      {
+        "_id": "82pKf",
+        "name": "advertising.com",
+        "count": 36
+      },
+      {
+        "_id": "rHJW5",
+        "name": "appnexus.com",
+        "count": 91
+      },
+      {
+        "_id": "7kJcF",
+        "name": "google.com",
+        "count": 102
+      },
+      {
+        "_id": "W2Qhd",
+        "name": "indexexchange.com",
+        "count": 50
+      },
+      {
+        "_id": "40MRg",
+        "name": "media.net",
+        "count": 6
+      },
+      {
+        "_id": "jDFzQ",
+        "name": "openx.com",
+        "count": 76
+      },
+      {
+        "_id": "3n8Sr",
+        "name": "pubmatic.com",
+        "count": 114
+      },
+      {
+        "_id": "KKu6N",
+        "name": "rubiconproject.com",
+        "count": 77
+      },
+      {
+        "_id": "X67fv",
+        "name": "sharethrough.com",
+        "count": 9
+      },
+      {
+        "_id": "mWbBk",
+        "name": "teads.tv",
+        "count": 10
+      },
+      {
+        "_id": "5ZFSA",
+        "name": "yahoo.com",
+        "count": 27
+      },
+      {
+        "_id": "me2JM",
+        "name": "yieldmo.com",
+        "count": 7
+      },
+      {
+        "_id": "gHs1v",
+        "name": "triplelift.com",
+        "count": 21
+      },
+      {
+        "_id": "icluj",
+        "name": "33across.com",
+        "count": 8
+      },
+      {
+        "_id": "1p4mS",
+        "name": "smaato.com",
+        "count": 13
+      },
+      {
+        "_id": "W4Qi4",
+        "name": "adcolony.com",
+        "count": 1
+      },
+      {
+        "_id": "DViFT",
+        "name": "adform.com",
+        "count": 17
+      },
+      {
+        "_id": "OQdLl",
+        "name": "converge-digital.com",
+        "count": 9
+      },
+      {
+        "_id": "6WqoX",
+        "name": "improvedigital.com",
+        "count": 25
+      },
+      {
+        "_id": "2MrP8",
+        "name": "lijit.com",
+        "count": 18
+      },
+      {
+        "_id": "cOH4V",
+        "name": "meitu.com",
+        "count": 1
+      },
+      {
+        "_id": "YdhY5",
+        "name": "sovrn.com",
+        "count": 19
+      },
+      {
+        "_id": "w6z3Q",
+        "name": "amxrtb.com",
+        "count": 5
+      },
+      {
+        "_id": "cXqFz",
+        "name": "smartadserver.com",
+        "count": 49
+      },
+      {
+        "_id": "g7xwX",
+        "name": "betweendigital.com",
+        "count": 4
+      },
+      {
+        "_id": "xGkad",
+        "name": "adyoulike.com",
+        "count": 4
+      },
+      {
+        "_id": "eu54K",
+        "name": "mediago.io",
+        "count": 1
+      },
+      {
+        "_id": "sF4yE",
+        "name": "dianomi.com",
+        "count": 1
+      },
+      {
+        "_id": "b8gzk",
+        "name": "engageya.com",
+        "count": 1
+      },
+      {
+        "_id": "VOUtu",
+        "name": "gecko.me",
+        "count": 3
+      },
+      {
+        "_id": "ZOYTB",
+        "name": "districtm.io",
+        "count": 21
+      },
+      {
+        "_id": "MH6Jj",
+        "name": "EMXDGT.com",
+        "count": 14
+      },
+      {
+        "_id": "ntdm6",
+        "name": "mgid.com",
+        "count": 1
+      },
+      {
+        "_id": "bIqDX",
+        "name": "themediagrid.com",
+        "count": 4
+      },
+      {
+        "_id": "lRgvo",
+        "name": "outbrain.com",
+        "count": 170
+      },
+      {
+        "_id": "5LrZI",
+        "name": "admanmedia.com",
+        "count": 7
+      },
+      {
+        "_id": "G5gRb",
+        "name": "aniview.com",
+        "count": 2
+      },
+      {
+        "_id": "EeDIM",
+        "name": "beachfront.com",
+        "count": 14
+      },
+      {
+        "_id": "IFeu9",
+        "name": "contextweb.com",
+        "count": 11
+      },
+      {
+        "_id": "M2P3w",
+        "name": "conversantmedia.com",
+        "count": 5
+      },
+      {
+        "_id": "06pVl",
+        "name": "freewheel.tv",
+        "count": 128
+      },
+      {
+        "_id": "wvdmV",
+        "name": "lkqd.net",
+        "count": 17
+      },
+      {
+        "_id": "l368O",
+        "name": "onetag.com",
+        "count": 10
+      },
+      {
+        "_id": "0C5nt",
+        "name": "rhythmone.com",
+        "count": 28
+      },
+      {
+        "_id": "V1Ggc",
+        "name": "richaudience.com",
+        "count": 9
+      },
+      {
+        "_id": "xNxx6",
+        "name": "risecodes.com",
+        "count": 1
+      },
+      {
+        "_id": "5djvt",
+        "name": "spotx.tv",
+        "count": 18
+      },
+      {
+        "_id": "5s3KQ",
+        "name": "spotxchange.com",
+        "count": 21
+      },
+      {
+        "_id": "gx8aN",
+        "name": "supply.colossusssp.com",
+        "count": 1
+      },
+      {
+        "_id": "N3AZn",
+        "name": "synacor.com",
+        "count": 8
+      },
+      {
+        "_id": "LPDKf",
+        "name": "tremorhub.com",
+        "count": 7
+      },
+      {
+        "_id": "j6yxV",
+        "name": "vidazoo.com",
+        "count": 4
+      },
+      {
+        "_id": "IrihY",
+        "name": "video.unrulymedia.com",
+        "count": 17
+      },
+      {
+        "_id": "FbmyP",
+        "name": "revcontent.com",
+        "count": 2
+      },
+      {
+        "_id": "ux4fE",
+        "name": "criteo.com",
+        "count": 4
+      },
+      {
+        "_id": "Ru1Gl",
+        "name": "mediabong.com",
+        "count": 8
+      },
+      {
+        "_id": "hsfAS",
+        "name": "my6sense.com",
+        "count": 1
+      },
+      {
+        "_id": "aawI7",
+        "name": "taboola.com",
+        "count": 8
+      },
+      {
+        "_id": "0etTi",
+        "name": "sonobi.com",
+        "count": 6
+      },
+      {
+        "_id": "D4vcr",
+        "name": "directadvert.ru",
+        "count": 1
+      },
+      {
+        "_id": "iEjRc",
+        "name": "impact-ad.jp",
+        "count": 1
+      },
+      {
+        "_id": "PrTnR",
+        "name": "lkqd.com",
+        "count": 11
+      },
+      {
+        "_id": "5nrNl",
+        "name": "telaria.com",
+        "count": 1
+      },
+      {
+        "_id": "R4iVL",
+        "name": "smartclip.net",
+        "count": 18
+      },
+      {
+        "_id": "Mf5jW",
+        "name": "videmob.com",
+        "count": 3
+      },
+      {
+        "_id": "WgvHe",
+        "name": "connatix.com",
+        "count": 1
+      },
+      {
+        "_id": "EATmj",
+        "name": "plista.com",
+        "count": 5
+      },
+      {
+        "_id": "RmJL8",
+        "name": "adops.com",
+        "count": 1
+      },
+      {
+        "_id": "IQpkP",
+        "name": "aps.amazon.com",
+        "count": 4
+      },
+      {
+        "_id": "J9Er2",
+        "name": "durationmedia.net",
+        "count": 1
+      },
+      {
+        "_id": "it8r9",
+        "name": "loopme.com",
+        "count": 6
+      },
+      {
+        "_id": "3x2IX",
+        "name": "nobid.io",
+        "count": 2
+      },
+      {
+        "_id": "nDvOh",
+        "name": "pubnative.net",
+        "count": 2
+      },
+      {
+        "_id": "ew6fh",
+        "name": "showheroes.com",
+        "count": 2
+      },
+      {
+        "_id": "PVGyI",
+        "name": "smilewanted.com",
+        "count": 1
+      },
+      {
+        "_id": "npjoQ",
+        "name": "uis.mobfox.com",
+        "count": 1
+      },
+      {
+        "_id": "JHZPz",
+        "name": "undertone.com",
+        "count": 1
+      },
+      {
+        "_id": "SoUo7",
+        "name": "viralize.com",
+        "count": 2
+      },
+      {
+        "_id": "oat72",
+        "name": "woobi.com",
+        "count": 1
+      },
+      {
+        "_id": "TDmVP",
+        "name": "aerserv.com",
+        "count": 1
+      },
+      {
+        "_id": "1zmv5",
+        "name": "firstimpression.io",
+        "count": 1
+      },
+      {
+        "_id": "4O0j5",
+        "name": "fyber.com",
+        "count": 6
+      },
+      {
+        "_id": "bTVCk",
+        "name": "mobfox.com",
+        "count": 2
+      },
+      {
+        "_id": "PNG1f",
+        "name": "pulsepoint.com",
+        "count": 1
+      },
+      {
+        "_id": "wqzXA",
+        "name": "chocolateplatform.com",
+        "count": 2
+      },
+      {
+        "_id": "sGhKh",
+        "name": "vdopia.com",
+        "count": 1
+      },
+      {
+        "_id": "pqJbW",
+        "name": "freeskreen.com",
+        "count": 1
+      },
+      {
+        "_id": "pZilC",
+        "name": "PilotX.tv",
+        "count": 1
+      },
+      {
+        "_id": "jqaKX",
+        "name": "springserve.com",
+        "count": 9
+      },
+      {
+        "_id": "IUgmo",
+        "name": "vindicosuite.com",
+        "count": 3
+      },
+      {
+        "_id": "IlXu7",
+        "name": "nsightvideo.com",
+        "count": 1
+      },
+      {
+        "_id": "O92Xl",
+        "name": "adagio.io",
+        "count": 1
+      },
+      {
+        "_id": "sUFLE",
+        "name": "ad-generation.jp",
+        "count": 1
+      },
+      {
+        "_id": "AoqPI",
+        "name": "admixer.net",
+        "count": 2
+      },
+      {
+        "_id": "S6FUj",
+        "name": "ads.adasiaholdings.com",
+        "count": 1
+      },
+      {
+        "_id": "aBfpY",
+        "name": "ad-stir.com",
+        "count": 1
+      },
+      {
+        "_id": "aqyqB",
+        "name": "adswizz.com",
+        "count": 1
+      },
+      {
+        "_id": "SUweA",
+        "name": "appads.in",
+        "count": 1
+      },
+      {
+        "_id": "zHgVa",
+        "name": "axonix.com",
+        "count": 2
+      },
+      {
+        "_id": "ZM04d",
+        "name": "bidscube.com",
+        "count": 1
+      },
+      {
+        "_id": "VkNfF",
+        "name": "engagebdr.com",
+        "count": 1
+      },
+      {
+        "_id": "K8g3L",
+        "name": "Eskimi.com",
+        "count": 1
+      },
+      {
+        "_id": "c9MTr",
+        "name": "gumgum.com",
+        "count": 5
+      },
+      {
+        "_id": "xqKG9",
+        "name": "lunamedia.io",
+        "count": 1
+      },
+      {
+        "_id": "DvvM7",
+        "name": "pokkt.com",
+        "count": 1
+      },
+      {
+        "_id": "IHvbo",
+        "name": "smartyads.com",
+        "count": 3
+      },
+      {
+        "_id": "yTZeY",
+        "name": "targetspot.com",
+        "count": 1
+      },
+      {
+        "_id": "ngr1s",
+        "name": "tidaltv.com",
+        "count": 4
+      },
+      {
+        "_id": "1JdbP",
+        "name": "tritondigital.com",
+        "count": 1
+      },
+      {
+        "_id": "gcq88",
+        "name": "xad.com",
+        "count": 1
+      },
+      {
+        "_id": "lkoGh",
+        "name": "xandr.com",
+        "count": 12
+      },
+      {
+        "_id": "hPGeC",
+        "name": "yieldlab.net",
+        "count": 25
+      },
+      {
+        "_id": "krk9G",
+        "name": "adpone.com",
+        "count": 1
+      },
+      {
+        "_id": "O34QM",
+        "name": "adtrue.com",
+        "count": 1
+      },
+      {
+        "_id": "l79I0",
+        "name": "connectad.io",
+        "count": 2
+      },
+      {
+        "_id": "UPjIU",
+        "name": "groundtruth.com",
+        "count": 1
+      },
+      {
+        "_id": "ffieE",
+        "name": "pixfuture.com",
+        "count": 1
+      },
+      {
+        "_id": "43WNX",
+        "name": "smartstream.tv",
+        "count": 9
+      },
+      {
+        "_id": "JPOS7",
+        "name": "sspx.tech",
+        "count": 4
+      },
+      {
+        "_id": "rFSlh",
+        "name": "stroeer.com",
+        "count": 2
+      },
+      {
+        "_id": "kmTZL",
+        "name": "yumenetworks.com",
+        "count": 1
+      },
+      {
+        "_id": "3myAD",
+        "name": "vidoomy.com",
+        "count": 1
+      },
+      {
+        "_id": "JTKDP",
+        "name": "9mediaonline.com",
+        "count": 1
+      },
+      {
+        "_id": "UFxOt",
+        "name": "ad.plus",
+        "count": 1
+      },
+      {
+        "_id": "ppl57",
+        "name": "addroplet.com",
+        "count": 1
+      },
+      {
+        "_id": "xIrB6",
+        "name": "afy11.net",
+        "count": 1
+      },
+      {
+        "_id": "G2D0x",
+        "name": "andbeyond.media",
+        "count": 1
+      },
+      {
+        "_id": "U2WXZ",
+        "name": "aralego.com",
+        "count": 1
+      },
+      {
+        "_id": "WpftA",
+        "name": "bidsxchange.com",
+        "count": 1
+      },
+      {
+        "_id": "jBzRf",
+        "name": "cedato.com",
+        "count": 2
+      },
+      {
+        "_id": "llYJ9",
+        "name": "colombiaonline.com",
+        "count": 1
+      },
+      {
+        "_id": "l01PG",
+        "name": "coxmt.com",
+        "count": 2
+      },
+      {
+        "_id": "eSa6w",
+        "name": "increaserev.com",
+        "count": 1
+      },
+      {
+        "_id": "hYZJo",
+        "name": "memevideoad.com",
+        "count": 1
+      },
+      {
+        "_id": "E4SeB",
+        "name": "mobileadtrading.com",
+        "count": 1
+      },
+      {
+        "_id": "thWSt",
+        "name": "optimatic.com",
+        "count": 1
+      },
+      {
+        "_id": "8vV8M",
+        "name": "quantcast.com",
+        "count": 1
+      },
+      {
+        "_id": "aXRl8",
+        "name": "somoaudience.com",
+        "count": 1
+      },
+      {
+        "_id": "zMwcj",
+        "name": "ssp.ynxs.io",
+        "count": 1
+      },
+      {
+        "_id": "SCF5O",
+        "name": "streamrail.net",
+        "count": 1
+      },
+      {
+        "_id": "rbucD",
+        "name": "thetimmedia.com",
+        "count": 1
+      },
+      {
+        "_id": "dC3h9",
+        "name": "turf.digital",
+        "count": 1
+      },
+      {
+        "_id": "ChYKx",
+        "name": "ucfunnel.com",
+        "count": 1
+      },
+      {
+        "_id": "RGDQI",
+        "name": "vertamedia.com",
+        "count": 3
+      },
+      {
+        "_id": "h7Ho2",
+        "name": "vi.ai",
+        "count": 1
+      },
+      {
+        "_id": "hjVi6",
+        "name": "video.adhunters.net",
+        "count": 1
+      },
+      {
+        "_id": "J5Wnc",
+        "name": "exponential.com",
+        "count": 2
+      },
+      {
+        "_id": "U2b0T",
+        "name": "Media.net",
+        "count": 1
+      },
+      {
+        "_id": "4wnRS",
+        "name": "tribalfusion.com",
+        "count": 1
+      },
+      {
+        "_id": "R5dK1",
+        "name": "blockthrough.com",
+        "count": 1
+      },
+      {
+        "_id": "Q3vE6",
+        "name": "adpushup.com",
+        "count": 1
+      },
+      {
+        "_id": "R4BQp",
+        "name": "adtech.com",
+        "count": 3
+      },
+      {
+        "_id": "LyO63",
+        "name": "advangelists.com",
+        "count": 1
+      },
+      {
+        "_id": "mMAYG",
+        "name": "emxdgt.com",
+        "count": 2
+      },
+      {
+        "_id": "GbXjz",
+        "name": "snigelweb.com",
+        "count": 1
+      },
+      {
+        "_id": "ft1qz",
+        "name": "verve.com",
+        "count": 1
+      }
+    ]
+  }
+]
