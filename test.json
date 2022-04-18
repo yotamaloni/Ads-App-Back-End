@@ -1,0 +1,13 @@
+// PROD
+    "scripts": {
+        "start": "node server.js",
+        "server:dev": "set NODE_ENV=development&&nodemon server.js",
+        "server:prod": "node server.js"
+    },
+
+    // DEV
+    "scripts": {
+        "start": "nodemon server.js",
+        "server:dev": "set NODE_ENV=development&&nodemon server.js",
+        "server:prod": "set NODE_ENV=production&&node server.js"
+    },
