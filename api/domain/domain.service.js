@@ -1,6 +1,6 @@
 const fs = require("fs");
 const axios = require("axios");
-var domains = require("../../data/domain-cache.json");
+var domains = require("../../data/domain-cache-try.json");
 
 async function query(name, filterBy, sortBy) {
   try {
@@ -93,6 +93,7 @@ function _convertToObject(lines) {
     const firstWord = wordsInLine[0].substring(0, wordsInLine[0].length - 1);
     if (firstWord.includes(".")) {
       const cleanName = _getCleanName(firstWord);
+      if (!cleanName) continue;
       mapObject[cleanName] = mapObject[cleanName]
         ? mapObject[cleanName] + 1
         : 1;
@@ -102,8 +103,11 @@ function _convertToObject(lines) {
 }
 
 function _getCleanName(name) {
-  let cleanedName = name.split(",")[0];
-  return cleanedName;
+  const possible =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let cleanedName = name.split(",")[0].toLowerCase();
+  if (possible.includes(cleanedName.charAt(0))) return cleanedName;
+  return null;
 }
 
 function _getDomainAds(mapObject) {
@@ -131,7 +135,7 @@ function _addDomainToCache(domainToAdd) {
 function _saveDomainToFile() {
   return new Promise((resolve, reject) => {
     fs.writeFile(
-      "data/domain-cache.json",
+      "data/domain-cache-try.json",
       JSON.stringify(domains, null, 2),
       (err) => {
         if (err) {
