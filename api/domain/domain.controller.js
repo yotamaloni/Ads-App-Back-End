@@ -10,7 +10,8 @@ async function getDomain(req, res) {
     const { data } = req.query;
     const dataToObj = JSON.parse(data);
     const { filterBy, sortBy } = dataToObj;
-    const domain = await domainService.query(name, filterBy, sortBy);
+    const nameToPass = name.toLowerCase();
+    const domain = await domainService.query(nameToPass, filterBy, sortBy);
     const finishParse = Date.now();
     domain.parseTime = finishParse - startParse;
     res.json(domain);
