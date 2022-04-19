@@ -1,5 +1,5 @@
 const fs = require("fs");
-const util = require("util");
+const axios = require("axios");
 var domains = require("../../data/domain-cache.json");
 
 async function query(name, filterBy, sortBy) {
@@ -43,7 +43,12 @@ function _getSortedDomain(domain, sortBy) {
 
 async function _getDomainByName(name) {
   try {
-    const data = await _readFile();
+    const data = await _readFile(name);
+    if (!data) {
+      console.log("DATA NOT FOUND");
+      const domainToAdd = { name, ads: [] };
+      return domainToAdd;
+    }
     const lines = await _splitToLines(data);
     const mapObject = await _convertToObject(lines);
     const domainAds = await _getDomainAds(mapObject);
@@ -54,14 +59,24 @@ async function _getDomainByName(name) {
   }
 }
 
-async function _readFile() {
+async function _readFile(name) {
   try {
-    const data = await fs.promises.readFile("data/data.txt", "utf8");
-    return data;
+    const URL = `https://www.${name}/ads.txt`;
+    const res = await axios.get(URL);
+    return res.data;
   } catch (err) {
     console.log(err);
   }
 }
+
+// async function _readFile() {
+//   try {
+//     const data = await fs.promises.readFile("data/data.txt", "utf8");
+//     return data;
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }
 
 function _splitToLines(data) {
   const lines = data.toString().replace(/\r\n/g, "\n").split("\n");
