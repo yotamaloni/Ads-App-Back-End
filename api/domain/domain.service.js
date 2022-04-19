@@ -1,6 +1,6 @@
 const fs = require("fs");
 const axios = require("axios");
-var domains = require("../../data/domain-cache-try.json");
+var domains = require("../../data/domain-cache-data.json");
 const PAGE_SIZE = 8;
 
 async function query(name, filterBy, sortBy) {
@@ -14,11 +14,11 @@ async function query(name, filterBy, sortBy) {
       _saveDomainToFile();
       console.log("FROM FETCH");
     }
-    domain.totalAds = domain.ads.length;
+    domain.numOfAds = domain.allAds.length;
     domain.maxItemsInPage = PAGE_SIZE;
     let domainToDisplay = { ...domain };
     domainToDisplay = _getSortedDomain(domainToDisplay, sortBy);
-    if (filterBy) domainToDisplay.ads = _getFilteredDomain(domain, filterBy);
+    domainToDisplay.adsToDisplay = _getFilteredDomain(domain, filterBy);
     return domainToDisplay;
   } catch (err) {
     console.log("cannot find boards", err);
@@ -29,9 +29,9 @@ async function query(name, filterBy, sortBy) {
 function _getFilteredDomain(domain, filterBy) {
   let filteredAds = [];
   const startIdx = PAGE_SIZE * (filterBy.currPage - 1);
-  filteredAds = domain.ads.slice(startIdx, startIdx + PAGE_SIZE);
+  filteredAds = domain.allAds.slice(startIdx, startIdx + PAGE_SIZE);
   if (filterBy.title) {
-    filteredAds = domain.ads.filter((ad) => {
+    filteredAds = domain.allAds.filter((ad) => {
       return ad.name.toLowerCase().includes(filterBy.title.toLowerCase());
     });
   }
@@ -39,7 +39,7 @@ function _getFilteredDomain(domain, filterBy) {
 }
 
 function _getSortedDomain(domain, sortBy) {
-  domain.ads.sort((ad1, ad2) => {
+  domain.allAds.sort((ad1, ad2) => {
     if (sortBy.type === "count") return (ad2.count - ad1.count) * sortBy.order;
     const name1 = ad1.name.toLowerCase();
     const name2 = ad2.name.toLowerCase();
@@ -55,13 +55,13 @@ async function _getDomainByName(name) {
     const data = await _readFile(name);
     if (!data) {
       console.log("DATA NOT FOUND");
-      const domainToAdd = { name, ads: [] };
+      const domainToAdd = { name, adsToDisplay: [], totalAds: [] };
       return domainToAdd;
     }
     const lines = await _splitToLines(data);
     const mapObject = await _convertToObject(lines);
     const domainAds = await _getDomainAds(mapObject);
-    const domainToAdd = { name, ads: domainAds };
+    const domainToAdd = { name, allAds: domainAds };
     return domainToAdd;
   } catch (err) {
     throw err;
@@ -77,15 +77,6 @@ async function _readFile(name) {
     console.log(err);
   }
 }
-
-// async function _readFile() {
-//   try {
-//     const data = await fs.promises.readFile("data/data.txt", "utf8");
-//     return data;
-//   } catch (err) {
-//     console.log(err);
-//   }
-// }
 
 function _splitToLines(data) {
   const lines = data.toString().replace(/\r\n/g, "\n").split("\n");
@@ -133,15 +124,15 @@ function _getDomainFromCache(name) {
   return domain;
 }
 
-function _addDomainToCache(domainToAdd) {
-  domains.unshift(domainToAdd);
-  _saveDomainToFile();
-}
+// function _addDomainToCache(domainToAdd) {
+//   domains.unshift(domainToAdd);
+//   _saveDomainToFile();
+// }
 
 function _saveDomainToFile() {
   return new Promise((resolve, reject) => {
     fs.writeFile(
-      "data/domain-cache-try.json",
+      "data/domain-cache-data.json",
       JSON.stringify(domains, null, 2),
       (err) => {
         if (err) {
