@@ -1,6 +1,7 @@
 const fs = require("fs");
 const axios = require("axios");
 var domains = require("../../data/domain-cache-try.json");
+const PAGE_SIZE = 8;
 
 async function query(name, filterBy, sortBy) {
   try {
@@ -13,10 +14,11 @@ async function query(name, filterBy, sortBy) {
       _saveDomainToFile();
       console.log("FROM FETCH");
     }
+    domain.totalAds = domain.ads.length;
+    domain.maxItemsInPage = PAGE_SIZE;
     let domainToDisplay = { ...domain };
-    if (filterBy) domainToDisplay.ads = _getFilteredDomain(domain, filterBy);
     domainToDisplay = _getSortedDomain(domainToDisplay, sortBy);
-
+    if (filterBy) domainToDisplay.ads = _getFilteredDomain(domain, filterBy);
     return domainToDisplay;
   } catch (err) {
     console.log("cannot find boards", err);
@@ -25,9 +27,14 @@ async function query(name, filterBy, sortBy) {
 }
 
 function _getFilteredDomain(domain, filterBy) {
-  const filteredAds = domain.ads.filter((ad) => {
-    return ad.name.toLowerCase().includes(filterBy.title.toLowerCase());
-  });
+  let filteredAds = [];
+  const startIdx = PAGE_SIZE * (filterBy.currPage - 1);
+  filteredAds = domain.ads.slice(startIdx, startIdx + PAGE_SIZE);
+  if (filterBy.title) {
+    filteredAds = domain.ads.filter((ad) => {
+      return ad.name.toLowerCase().includes(filterBy.title.toLowerCase());
+    });
+  }
   return filteredAds;
 }
 
