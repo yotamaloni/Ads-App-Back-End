@@ -43,7 +43,6 @@ function _getSortedDomain(domain, sortBy) {
     if (sortBy.type === "count") return (ad2.count - ad1.count) * sortBy.order;
     const name1 = ad1.name.toLowerCase();
     const name2 = ad2.name.toLowerCase();
-    console.log(("NUM1-NUM2? ", name1 > name2));
     if (name1 > name2) return 1 * sortBy.order;
     if (name1 < name2) return -1 * sortBy.order;
     return 0;
