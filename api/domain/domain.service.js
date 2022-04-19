@@ -36,7 +36,10 @@ function _getSortedDomain(domain, sortBy) {
     if (sortBy.type === "count") return (ad2.count - ad1.count) * sortBy.order;
     const name1 = ad1.name.toLowerCase();
     const name2 = ad2.name.toLowerCase();
-    return 1;
+    console.log(("NUM1-NUM2? ", name1 > name2));
+    if (name1 > name2) return 1 * sortBy.order;
+    if (name1 < name2) return -1 * sortBy.order;
+    return 0;
   });
   return domain;
 }
@@ -89,12 +92,18 @@ function _convertToObject(lines) {
     const wordsInLine = line.split(" ");
     const firstWord = wordsInLine[0].substring(0, wordsInLine[0].length - 1);
     if (firstWord.includes(".")) {
-      mapObject[firstWord] = mapObject[firstWord]
-        ? mapObject[firstWord] + 1
+      const cleanName = _getCleanName(firstWord);
+      mapObject[cleanName] = mapObject[cleanName]
+        ? mapObject[cleanName] + 1
         : 1;
     }
   }
   return mapObject;
+}
+
+function _getCleanName(name) {
+  let cleanedName = name.split(",")[0];
+  return cleanedName;
 }
 
 function _getDomainAds(mapObject) {
