@@ -11,13 +11,11 @@ async function getDomainInfo(name, filterBy, sortBy) {
     domain = _getDomainFromCache(name);
     if (domain) {
       domain.parseTime = "cached";
-      console.log("FROM CACHE");
     } else {
       //Get domain from 3rd party
       domain = await _getDomainByName(name);
       domains.unshift(domain);
       _saveDomainToFile();
-      console.log("FROM FETCH");
     }
     //Organize the domain for display
     domain.numOfAds = domain.allAds.length;
@@ -27,10 +25,11 @@ async function getDomainInfo(name, filterBy, sortBy) {
     domainToDisplay.adsToDisplay = _getFilteredDomain(domain, filterBy);
     return domainToDisplay;
   } catch (err) {
-    console.log("cannot find boards", err);
+    console.log("cannot find domain", err);
     throw err;
   }
 }
+
 
 function _getFilteredDomain(domain, filterBy) {
   let filteredAds = [];
@@ -63,7 +62,6 @@ async function _getDomainByName(name) {
   try {
     const data = await _readFile(name);
     if (!data) {
-      console.log("DATA NOT FOUND");
       const domainToAdd = { name, adsToDisplay: [], allAds: [] };
       return domainToAdd;
     }
@@ -77,15 +75,14 @@ async function _getDomainByName(name) {
   }
 }
 
-
 //Get info with axios
 async function _readFile(name) {
   try {
     const URL = `https://www.${name}/ads.txt`;
     const res = await axios.get(URL);
-    if (res.request._redirectable._redirectCount > 0) {
-      return null;
-    }
+    // if (res.request._redirectable._redirectCount > 0) {
+    //   return null;
+    // }
     return res.data;
   } catch (err) {
     console.log(err);
@@ -97,8 +94,7 @@ function _splitToLines(data) {
   return lines;
 }
 
-
-//Get object map of ads 
+//Get object map of ads
 function _convertToObject(lines) {
   const mapObject = {};
   for (let line of lines) {
@@ -113,14 +109,12 @@ function _convertToObject(lines) {
   return mapObject;
 }
 
-
 function _isDomain(domainName) {
   return !reg.test(domainName) && domainName.includes(".");
 }
 
-
 function _getDomainAds(mapObject) {
-  domainAds = [];
+  const domainAds = [];
   for (const domainName in mapObject) {
     domainAds.push({
       _id: _makeId(),
@@ -143,10 +137,8 @@ function _saveDomainToFile() {
       JSON.stringify(domains, null, 2),
       (err) => {
         if (err) {
-          console.log(err);
           reject("Cannot write to file");
         } else {
-          console.log("Wrote Successfully!");
           resolve();
         }
       }

@@ -11,7 +11,7 @@ node.js
 Clean code
 
 Finish all the bonuses of the Home Assignment including cashing
-and also add paging feature
+and also add paging feature.
 
 ## How to run:
 
