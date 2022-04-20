@@ -2,7 +2,7 @@
 
 ## Author: Yotam Aloni, For: VIDAZOO
 
-Theologies used:
+Technologies used:
 
 node.js
 
