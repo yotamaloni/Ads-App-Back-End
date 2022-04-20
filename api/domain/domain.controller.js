@@ -20,7 +20,6 @@ async function getDomain(req, res) {
     if (!domain.parseTime) domain.parseTime = finishParse - startParse;
     res.json(domain);
   } catch (err) {
-    console.log("Failed to get domains", err);
     res.status(500).send({ err: "Failed to get domains" });
   }
 }

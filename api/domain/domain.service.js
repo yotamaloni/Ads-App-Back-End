@@ -1,6 +1,6 @@
 const fs = require("fs");
 const axios = require("axios");
-var domains = require("../../data/domain-cache-data.json");
+var domains = require("../../data/cache-domains.json");
 var reg = new RegExp("[^a-z0-9-.]", "i");
 const PAGE_SIZE = 8;
 
@@ -25,11 +25,9 @@ async function getDomainInfo(name, filterBy, sortBy) {
     domainToDisplay.adsToDisplay = _getFilteredDomain(domain, filterBy);
     return domainToDisplay;
   } catch (err) {
-    console.log("cannot find domain", err);
     throw err;
   }
 }
-
 
 function _getFilteredDomain(domain, filterBy) {
   let filteredAds = [];
@@ -80,12 +78,8 @@ async function _readFile(name) {
   try {
     const URL = `https://www.${name}/ads.txt`;
     const res = await axios.get(URL);
-    // if (res.request._redirectable._redirectCount > 0) {
-    //   return null;
-    // }
     return res.data;
   } catch (err) {
-    console.log(err);
   }
 }
 
@@ -133,7 +127,7 @@ function _getDomainFromCache(name) {
 function _saveDomainToFile() {
   return new Promise((resolve, reject) => {
     fs.writeFile(
-      "data/domain-cache-data.json",
+      "data/cache-domains.json",
       JSON.stringify(domains, null, 2),
       (err) => {
         if (err) {

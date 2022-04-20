@@ -10,7 +10,7 @@
     "start": "node server.js",
     "server:dev": "set NODE_ENV=development&&nodemon server.js",
     "server:prod": "node server.js"
-  },
+},
   "author": "Yotam Aloni",
   "license": "ISC",
   "dependencies": {

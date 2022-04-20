@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.56c420bd.css",
-    "main.js": "/static/js/main.78f02d74.js",
+    "main.js": "/static/js/main.b036d03c.js",
     "static/media/MochiyPopPOne-Regular.ttf": "/static/media/MochiyPopPOne-Regular.a343480e7534e19d0c78.ttf",
     "service-worker.js": "/service-worker.js",
     "index.html": "/index.html",
     "main.56c420bd.css.map": "/static/css/main.56c420bd.css.map",
-    "main.78f02d74.js.map": "/static/js/main.78f02d74.js.map"
+    "main.b036d03c.js.map": "/static/js/main.b036d03c.js.map"
   },
   "entrypoints": [
     "static/css/main.56c420bd.css",
-    "static/js/main.78f02d74.js"
+    "static/js/main.b036d03c.js"
   ]
 }
