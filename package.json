@@ -7,10 +7,10 @@
   "description": "production ready server",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "server:dev": "set NODE_ENV=development&&nodemon server.js",
-    "server:prod": "node server.js"
-},
+    "server:prod": "set NODE_ENV=production&&node server.js"
+  },
   "author": "Yotam Aloni",
   "license": "ISC",
   "dependencies": {
