@@ -11,9 +11,13 @@ async function getDomain(req, res) {
     const dataToObj = JSON.parse(data);
     const { filterBy, sortBy } = dataToObj;
     const nameToPass = name.toLowerCase();
-    const domain = await domainService.query(nameToPass, filterBy, sortBy);
+    const domain = await domainService.getDomainInfo(
+      nameToPass,
+      filterBy,
+      sortBy
+    );
     const finishParse = Date.now();
-    domain.parseTime = finishParse - startParse;
+    if (!domain.parseTime) domain.parseTime = finishParse - startParse;
     res.json(domain);
   } catch (err) {
     console.log("Failed to get domains", err);

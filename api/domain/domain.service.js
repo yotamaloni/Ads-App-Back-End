@@ -1,19 +1,25 @@
 const fs = require("fs");
 const axios = require("axios");
 var domains = require("../../data/domain-cache-data.json");
+var reg = new RegExp("[^a-z0-9-.]", "i");
 const PAGE_SIZE = 8;
 
-async function query(name, filterBy, sortBy) {
+async function getDomainInfo(name, filterBy, sortBy) {
   try {
     let domain = null;
+    //Get domain from cache
     domain = _getDomainFromCache(name);
-    if (domain) console.log("FROM CACHE");
-    else {
+    if (domain) {
+      domain.parseTime = "cached";
+      console.log("FROM CACHE");
+    } else {
+      //Get domain from 3rd party
       domain = await _getDomainByName(name);
       domains.unshift(domain);
       _saveDomainToFile();
       console.log("FROM FETCH");
     }
+    //Organize the domain for display
     domain.numOfAds = domain.allAds.length;
     domain.maxItemsInPage = PAGE_SIZE;
     let domainToDisplay = { ...domain };
@@ -29,6 +35,7 @@ async function query(name, filterBy, sortBy) {
 function _getFilteredDomain(domain, filterBy) {
   let filteredAds = [];
   const startIdx = PAGE_SIZE * (filterBy.currPage - 1);
+  //Ads paging
   filteredAds = domain.allAds.slice(startIdx, startIdx + PAGE_SIZE);
   if (filterBy.title) {
     filteredAds = domain.allAds.filter((ad) => {
@@ -38,6 +45,7 @@ function _getFilteredDomain(domain, filterBy) {
   return filteredAds;
 }
 
+//Sort the ads
 function _getSortedDomain(domain, sortBy) {
   domain.allAds.sort((ad1, ad2) => {
     if (sortBy.type === "count") return (ad2.count - ad1.count) * sortBy.order;
@@ -50,12 +58,13 @@ function _getSortedDomain(domain, sortBy) {
   return domain;
 }
 
+//Get domain from 3rd party
 async function _getDomainByName(name) {
   try {
     const data = await _readFile(name);
     if (!data) {
       console.log("DATA NOT FOUND");
-      const domainToAdd = { name, adsToDisplay: [], totalAds: [] };
+      const domainToAdd = { name, adsToDisplay: [], allAds: [] };
       return domainToAdd;
     }
     const lines = await _splitToLines(data);
@@ -68,10 +77,15 @@ async function _getDomainByName(name) {
   }
 }
 
+
+//Get info with axios
 async function _readFile(name) {
   try {
     const URL = `https://www.${name}/ads.txt`;
     const res = await axios.get(URL);
+    if (res.request._redirectable._redirectCount > 0) {
+      return null;
+    }
     return res.data;
   } catch (err) {
     console.log(err);
@@ -83,29 +97,27 @@ function _splitToLines(data) {
   return lines;
 }
 
+
+//Get object map of ads 
 function _convertToObject(lines) {
   const mapObject = {};
   for (let line of lines) {
-    const wordsInLine = line.split(" ");
-    const firstWord = wordsInLine[0].substring(0, wordsInLine[0].length - 1);
-    if (firstWord.includes(".")) {
-      const cleanName = _getCleanName(firstWord);
-      if (!cleanName) continue;
-      mapObject[cleanName] = mapObject[cleanName]
-        ? mapObject[cleanName] + 1
+    const wordsInLine = line.split(",");
+    const firstWord = wordsInLine[0].toLowerCase();
+    if (_isDomain(firstWord)) {
+      mapObject[firstWord] = mapObject[firstWord]
+        ? mapObject[firstWord] + 1
         : 1;
     }
   }
   return mapObject;
 }
 
-function _getCleanName(name) {
-  const possible =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  let cleanedName = name.split(",")[0].toLowerCase();
-  if (possible.includes(cleanedName.charAt(0))) return cleanedName;
-  return null;
+
+function _isDomain(domainName) {
+  return !reg.test(domainName) && domainName.includes(".");
 }
+
 
 function _getDomainAds(mapObject) {
   domainAds = [];
@@ -123,11 +135,6 @@ function _getDomainFromCache(name) {
   const domain = domains.find((currDomain) => currDomain.name === name);
   return domain;
 }
-
-// function _addDomainToCache(domainToAdd) {
-//   domains.unshift(domainToAdd);
-//   _saveDomainToFile();
-// }
 
 function _saveDomainToFile() {
   return new Promise((resolve, reject) => {
@@ -158,5 +165,5 @@ function _makeId(length = 5) {
 }
 
 module.exports = {
-  query,
+  getDomainInfo,
 };
