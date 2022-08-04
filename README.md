@@ -1,4 +1,4 @@
-# Ads App - Back End Section.
+# Ads App - Back End Section
 
 ## Author: Yotam Aloni, For: VIDAZOO
 
